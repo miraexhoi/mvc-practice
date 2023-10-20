@@ -15,5 +15,8 @@ public class WebApplicationServer {
 
         tomcat.addWebapp("/", new File(webappDirLocation).getAbsolutePath());
         log.info("configuring app with ");
+
+        tomcat.start();
+        tomcat.getServer().await();
     }
 }
